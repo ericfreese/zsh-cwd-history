@@ -6,7 +6,7 @@
 # Initialize on first command prompt, then remove the hook
 _zsh_cwd_history_hook_precmd() {
 	_zsh_cwd_history_cwd_changed
-	add-zsh-hook -d precmd _zsh_cwd_history_first_precmd
+	add-zsh-hook -d precmd _zsh_cwd_history_hook_precmd
 }
 
 _zsh_cwd_history_hook_chpwd() {
