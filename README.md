@@ -2,7 +2,7 @@
 
 _Scopes your command history to the current working directory._
 
-Based on https://github.com/jimhester/per-directory-history
+Idea from https://github.com/jimhester/per-directory-history
 
 
 ## Installation

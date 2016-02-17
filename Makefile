@@ -3,8 +3,11 @@ SCRIPT_DIR := ./script
 
 SRC_FILES := \
 	$(SRC_DIR)/config.zsh \
-	$(SRC_DIR)/cwd_history.zsh \
+	$(SRC_DIR)/histfile.zsh \
+	$(SRC_DIR)/message.zsh \
+	$(SRC_DIR)/toggle.zsh \
 	$(SRC_DIR)/hooks.zsh
+
 
 HEADER_FILES := \
 	DESCRIPTION \
