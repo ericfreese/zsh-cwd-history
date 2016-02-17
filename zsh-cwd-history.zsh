@@ -1,7 +1,7 @@
 # Scope history to the current working directory.
 # Idea from https://github.com/jimhester/per-directory-history
 # https://github.com/ericfreese/zsh-cwd-history
-# v0.2.0
+# v0.2.1
 # Copyright (c) 2016 Eric Freese
 # 
 # Permission is hereby granted, free of charge, to any person
