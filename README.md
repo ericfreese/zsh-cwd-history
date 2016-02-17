@@ -43,14 +43,51 @@ Idea from https://github.com/jimhester/per-directory-history
 
 ## Usage
 
-Your history will show only commands executed in the current working directory.
+As you change directories, the zsh history list will be updated to show only the commands that were executed in that directory.
 
+History will be saved and read according to the [standard ZSH history options](http://zsh.sourceforge.net/Doc/Release/Options.html#History), with the exception that cwd history files (stored under `$ZSH_CWD_HISTORY_DIR`) will be written to when switching directories.
+
+This plugin provides a zle widget to toggle between cwd history and global history but does not bind any keys by default. To enable the widget, see the section on [configuring key bindings](#key-bindings) below.
 
 ## Configuration
 
-You can configure the directory that history data is written to by setting the `$ZSH_CWD_HISTORY_DIR` global variable after sourcing this plugin. By default history this is set to `~/.zsh_cwd_history/`.
+You may want to override the default global config variables after sourcing the plugin. Default values of these variables can be found [here](src/config.zsh).
 
 **Note:** If you are using Oh My Zsh, you can put this configuration in a file in the `$ZSH_CUSTOM` directory. See their comments on [overriding internals](https://github.com/robbyrussell/oh-my-zsh/wiki/Customization#overriding-internals).
+
+
+### History Directory
+
+You can configure the location where history data for each directory will be saved by setting the `$ZSH_CWD_HISTORY_DIR` global variable after sourcing this plugin.
+
+For example:
+
+```shell
+ZSH_CWD_HISTORY_DIR=~/my/special/history/dir
+```
+
+
+### Key Bindings
+
+This plugin provides a `cwd-history-toggle` widget that you can use with `bindkey` to toggle cwd history on/off This will switch between whatever HISTFILE was active before this plugin was initialized.
+
+For example, this would bind <kbd>ctrl</kbd> + <kbd>B</kbd> to toggle cwd history.
+
+```sh
+bindkey '^B' cwd-history-toggle
+```
+
+
+### Messages
+
+You can configure how loud this plugin is about changing history files by setting the `$ZSH_CWD_HISTORY_SHOW_TOGGLE_MSG` and `$ZSH_CWD_HISTORY_SHOW_CHPWD_MSG` global variables.
+
+For example, to turn off all messages:
+
+```shell
+ZSH_CWD_HISTORY_SHOW_TOGGLE_MSG=false
+ZSH_CWD_HISTORY_SHOW_CHPWD_MSG=false
+```
 
 
 ## Troubleshooting
